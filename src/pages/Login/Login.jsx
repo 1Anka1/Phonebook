@@ -1,3 +1,11 @@
+import { Container, Section } from '../../components/shared/Layout/Layout.styled';
+
 export default function Login() {
-  return <div>Login</div>;
+  return (
+    <Section>
+      <Container>
+        <div>Login</div>
+      </Container>
+    </Section>
+  );
 }

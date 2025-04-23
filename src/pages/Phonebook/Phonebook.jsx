@@ -1,3 +1,11 @@
+import { Container, Section } from '../../components/shared/Layout/Layout.styled';
+
 export default function Phonebook() {
-  return <div>Phonebook</div>;
+  return (
+    <Section>
+      <Container>
+        <div>Phonebook</div>
+      </Container>
+    </Section>
+  );
 }
