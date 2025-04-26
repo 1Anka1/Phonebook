@@ -1,10 +1,11 @@
 import { Container, Section } from '../../components/shared/Layout/Layout.styled';
+import Form from '../../components/shared/ui/Form/Form';
 
 export default function Login() {
   return (
     <Section>
       <Container>
-        <div>Login</div>
+        <Form>Login</Form>
       </Container>
     </Section>
   );

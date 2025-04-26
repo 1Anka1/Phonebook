@@ -24,7 +24,7 @@ export const NavLinkItems = styled(NavLink)`
 
   &.active {
     position: relative;
-    color: #d59bf6;
+    color: var(--primary-color);
   }
 
   &.active::before {
@@ -34,11 +34,11 @@ export const NavLinkItems = styled(NavLink)`
     left: 0;
     bottom: -5px;
     height: 2px;
-    background-color: #d59bf6;
+    background-color: var(--primary-color);
   }
 
   &:hover {
-    color: #d59bf6;
+    color: var(--primary-color);
     transition: color 250ms var(--timing-function);
   }
 `;

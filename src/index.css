@@ -2,7 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
+  --primary-color: #d59bf6;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --background-color: #f8f8ff;
 }
 
 html:focus-within {
