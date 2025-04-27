@@ -4,7 +4,7 @@ export default function Navigation() {
   return (
     <SC.NavBar>
       <NavLink to="/">
-        <img width="70px" height="50px" src="../../../public/images/phonebook-icon.png" />
+        <img width="70px" height="50px" src="/images/phonebook-icon.png" />
       </NavLink>
       <SC.NavList>
         <SC.NavItems>

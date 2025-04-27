@@ -1,10 +1,13 @@
+import Loader from '../../components/Loader/Loader';
 import { Container, Section } from '../../components/shared/Layout/Layout.styled';
 
 export default function Phonebook() {
   return (
     <Section>
       <Container>
-        <div>Phonebook</div>
+        <Loader isLoading={true}>
+          <div>Phonebook</div>
+        </Loader>
       </Container>
     </Section>
   );

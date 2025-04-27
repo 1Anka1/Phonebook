@@ -21,6 +21,7 @@ export const FormTitle = styled.h2`
 `;
 
 export const Input = styled.input`
+  width: 500px;
   border: 1px solid;
   background-color: var(--background-color);
   opacity: 0.6;
@@ -31,6 +32,7 @@ export const Input = styled.input`
 `;
 
 export const FormButton = styled.button`
+  width: 500px;
   color: white;
   background-color: var(--primary-color);
   border: none;
@@ -44,4 +46,10 @@ export const FormButton = styled.button`
     color: var(--primary-color);
     background-color: var(--background-color);
   }
+`;
+
+export const PasswordWrapper = styled.div`
+  position: relative;
+  width: 510px;
+  height: 50px;
 `;
