@@ -5,7 +5,7 @@ export default function Phonebook() {
   return (
     <Section>
       <Container>
-        <Loader isLoading={true}>
+        <Loader>
           <div>Phonebook</div>
         </Loader>
       </Container>

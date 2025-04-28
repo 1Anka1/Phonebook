@@ -1,11 +1,11 @@
 import { Container, Section } from '../../components/shared/Layout/Layout.styled';
-import Form from '../../components/shared/ui/Form/Form';
+import RegisterForm from '../../components/RegisterForm/RegisterForm';
 
 export default function Register() {
   return (
     <Section>
       <Container>
-        <Form>Registration</Form>
+        <RegisterForm />
       </Container>
     </Section>
   );

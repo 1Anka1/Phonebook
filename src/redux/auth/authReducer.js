@@ -17,23 +17,23 @@ export const authSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(register.pending, (state) => state)
-      .addCase(register.rejected, (state) => state)
       .addCase(register.fulfilled, (state, { payload }) => {
-        state.user.name = payload.data.user.name;
-        state.user.email = payload.data.user.email;
+        state.user = payload.data.user;
         state.token = payload.data.token;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
+      .addCase(register.rejected, (state) => state)
+
       .addCase(login.pending, (state) => state)
-      .addCase(login.rejected, (state) => state)
       .addCase(login.fulfilled, (state, { payload }) => {
-        state.user.name = payload.data.user.name;
-        state.user.email = payload.data.user.email;
+        state.user = payload.data.user;
         state.token = payload.data.token;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       })
+      .addCase(login.rejected, (state) => state)
+
       .addCase(logout.pending, (state) => state)
       .addCase(logout.rejected, (state) => {
         state.user.name = null;
@@ -49,6 +49,7 @@ export const authSlice = createSlice({
         state.isLoggedIn = false;
         state.isRefreshing = false;
       })
+
       .addCase(refreshUser.pending, (state) => {
         state.isRefreshing = true;
       })
@@ -60,8 +61,7 @@ export const authSlice = createSlice({
         state.isRefreshing = false;
       })
       .addCase(refreshUser.fulfilled, (state, { payload }) => {
-        state.user.name = payload.data.user.name;
-        state.user.email = payload.data.user.email;
+        state.user = payload.data.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
       }),

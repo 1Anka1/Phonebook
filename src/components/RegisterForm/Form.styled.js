@@ -23,29 +23,11 @@ export const FormTitle = styled.h2`
 export const Input = styled.input`
   width: 500px;
   border: 1px solid;
-  background-color: var(--background-color);
   opacity: 0.6;
   border-radius: 40px;
   outline: none;
   padding: 14px 32px;
   font-size: 16px;
-`;
-
-export const FormButton = styled.button`
-  width: 500px;
-  color: white;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 40px;
-  padding: 14px;
-  font-size: 20px;
-  cursor: pointer;
-  transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
-
-  &:hover {
-    color: var(--primary-color);
-    background-color: var(--background-color);
-  }
 `;
 
 export const PasswordWrapper = styled.div`

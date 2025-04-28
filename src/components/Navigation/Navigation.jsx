@@ -1,24 +1,18 @@
 import * as SC from './Navigation.styled.js';
-import { NavLink } from 'react-router';
+import UserMenu from './UserMenu/UserMenu.jsx';
+import AuthNav from './AuthNav/AuthNav.jsx';
+import MenuNav from './MenuNav/MenuNav.jsx';
+import { useSelector } from 'react-redux';
+import { selectIsLogged } from '../../redux/auth/authSelectors.js';
+
 export default function Navigation() {
+  const isLogged = useSelector(selectIsLogged);
+
   return (
     <SC.NavBar>
-      <NavLink to="/">
-        <img width="70px" height="50px" src="/images/phonebook-icon.png" />
-      </NavLink>
       <SC.NavList>
-        <SC.NavItems>
-          <SC.NavLinkItems to="/">home</SC.NavLinkItems>
-        </SC.NavItems>
-        <SC.NavItems>
-          <SC.NavLinkItems to="phonebook">phonebook</SC.NavLinkItems>
-        </SC.NavItems>
-        <SC.NavItems>
-          <SC.NavLinkItems to="login">login</SC.NavLinkItems>
-        </SC.NavItems>
-        <SC.NavItems>
-          <SC.NavLinkItems to="register">register</SC.NavLinkItems>
-        </SC.NavItems>
+        <MenuNav />
+        {isLogged ? <UserMenu /> : <AuthNav />}
       </SC.NavList>
     </SC.NavBar>
   );

@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import * as SC from './Form.styled';
 import { useDispatch } from 'react-redux';
-import { register } from '../../../../redux/auth/authOperations';
-import ButtonShow from '../ButtonShow/ButtonShow';
+import { register } from '../../redux/auth/authOperations';
+import ButtonShow from '../shared/ui/ButtonShow/ButtonShow';
+import Button from '../shared/ui/Button/Button';
 
-export default function Form({ children }) {
+export default function RegisterForm() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -14,8 +15,7 @@ export default function Form({ children }) {
 
   const dispatch = useDispatch();
 
-  const handelInputChange = (e) => {
-    const { name, value } = e.target;
+  const handelInputChange = ({ target: { name, value } }) => {
     switch (name) {
       case 'email':
         setEmail(value);
@@ -41,14 +41,12 @@ export default function Form({ children }) {
       alert('Wrong Password!');
       return;
     }
+    dispatch(register({ name, email, password }));
 
-    dispatch(
-      register({
-        name,
-        email,
-        password,
-      }),
-    );
+    setEmail('');
+    setName('');
+    setPassword('');
+    setConfirmPass('');
   };
 
   const handelShowPass = (e) => {
@@ -62,7 +60,14 @@ export default function Form({ children }) {
   return (
     <SC.FormWrapper>
       <SC.Form onSubmit={handelSubmit}>
-        <SC.FormTitle> {children}</SC.FormTitle>
+        <SC.FormTitle>Registration</SC.FormTitle>
+        <SC.Input
+          onChange={handelInputChange}
+          value={name}
+          placeholder="Name"
+          type="text"
+          name="name"
+        />
         <SC.Input
           onChange={handelInputChange}
           value={email}
@@ -74,35 +79,25 @@ export default function Form({ children }) {
           <SC.Input
             onChange={handelInputChange}
             value={password}
-            type="password"
+            type={isShowedPass.status ? 'text' : 'password'}
             name="password"
             placeholder="Password"
           />
           <ButtonShow handelShowPass={handelShowPass} name={isShowedPass} />
         </SC.PasswordWrapper>
 
-        {children === 'Registration' && (
-          <>
-            <SC.Input
-              onChange={handelInputChange}
-              value={name}
-              placeholder="Name"
-              type="text"
-              name="name"
-            />
-            <SC.PasswordWrapper>
-              <SC.Input
-                onChange={handelInputChange}
-                value={confirmPass}
-                type="password"
-                name="confirmPass"
-                placeholder="Confirm your password"
-              />
-              <ButtonShow handelShowPass={handelShowPass} name={isShowedConfPass} />
-            </SC.PasswordWrapper>
-          </>
-        )}
-        <SC.FormButton type="submit">Submit</SC.FormButton>
+        <SC.PasswordWrapper>
+          <SC.Input
+            onChange={handelInputChange}
+            value={confirmPass}
+            type={isShowedConfPass.status ? 'text' : 'password'}
+            name="confirmPass"
+            placeholder="Confirm your password"
+          />
+          <ButtonShow handelShowPass={handelShowPass} name={isShowedConfPass} />
+        </SC.PasswordWrapper>
+
+        <Button type="submit">Submit</Button>
       </SC.Form>
     </SC.FormWrapper>
   );

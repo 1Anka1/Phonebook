@@ -1,11 +1,11 @@
 import { Container, Section } from '../../components/shared/Layout/Layout.styled';
-import Form from '../../components/shared/ui/Form/Form';
+import LoginForm from '../../components/LoginForm/LoginForm';
 
 export default function Login() {
   return (
     <Section>
       <Container>
-        <Form>Login</Form>
+        <LoginForm>Login</LoginForm>
       </Container>
     </Section>
   );
