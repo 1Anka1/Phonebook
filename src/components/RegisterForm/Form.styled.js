@@ -8,7 +8,7 @@ export const FormWrapper = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 35px;
   width: 600px;
   padding: 50px;
   border-radius: 35px;
@@ -17,17 +17,18 @@ export const Form = styled.form`
 
 export const FormTitle = styled.h2`
   text-align: center;
-  font-size: 36px;
+  font-size: 50px;
 `;
 
 export const Input = styled.input`
   width: 500px;
+  height: 55px;
   border: 1px solid;
   opacity: 0.6;
-  border-radius: 40px;
+  border-radius: 35px;
   outline: none;
   padding: 14px 32px;
-  font-size: 16px;
+  font-size: 20px;
 `;
 
 export const PasswordWrapper = styled.div`

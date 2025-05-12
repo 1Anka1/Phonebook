@@ -1,8 +1,10 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 :root {
   --primary-color: #d59bf6;
+  --light-color: #ffff;
+  --text-color: #666;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --background-color: #f8f8ff;
 }
@@ -49,5 +51,5 @@ body {
   display: block;
   margin: 0;
   font-size: 25px;
-  font: 15px/1.5 'Press Start 2P', system-ui;
+  font: 25px/1.5 'Indie Flower', cursive;
 }

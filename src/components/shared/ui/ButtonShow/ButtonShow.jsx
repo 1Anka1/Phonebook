@@ -1,11 +1,10 @@
-import { FaRegEyeSlash } from 'react-icons/fa';
 import * as SC from './ButtomShow.styled';
-import { IoEyeOutline } from 'react-icons/io5';
+import { VscEye, VscEyeClosed } from 'react-icons/vsc';
 
 export default function ButtonShow({ name, handelShowPass }) {
   return (
     <SC.Button onClick={handelShowPass} name={name.type} type="button">
-      {name.status ? <FaRegEyeSlash /> : <IoEyeOutline />}
+      {name.status ? <VscEyeClosed size="20px" /> : <VscEye size="20px" />}
     </SC.Button>
   );
 }

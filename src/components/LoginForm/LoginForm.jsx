@@ -4,6 +4,7 @@ import { login } from '../../redux/auth/authOperations';
 import { useState } from 'react';
 import ButtonShow from '../shared/ui/ButtonShow/ButtonShow';
 import Button from '../shared/ui/Button/Button';
+import Loader from '../Loader/Loader';
 
 export default function LoginForm() {
   const dispatch = useDispatch();
@@ -38,28 +39,30 @@ export default function LoginForm() {
 
   return (
     <SC.FormWrapper>
-      <SC.Form onSubmit={handelSubmit} autoComplete="on">
-        <SC.FormTitle>Login</SC.FormTitle>
-        <SC.Input
-          onChange={handelInputChange}
-          value={email}
-          placeholder="Email"
-          type="email"
-          name="email"
-        />
-        <SC.PasswordWrapper>
+      <Loader>
+        <SC.Form onSubmit={handelSubmit} autoComplete="on">
+          <SC.FormTitle>Login</SC.FormTitle>
           <SC.Input
             onChange={handelInputChange}
-            value={password}
-            type={isShowedPass.status ? 'text' : 'password'}
-            name="password"
-            placeholder="Password"
+            value={email}
+            placeholder="Email"
+            type="email"
+            name="email"
           />
-          <ButtonShow handelShowPass={handelShowPass} name={isShowedPass} />
-        </SC.PasswordWrapper>
+          <SC.PasswordWrapper>
+            <SC.Input
+              onChange={handelInputChange}
+              value={password}
+              type={isShowedPass.status ? 'text' : 'password'}
+              name="password"
+              placeholder="Password"
+            />
+            <ButtonShow handelShowPass={handelShowPass} name={isShowedPass} />
+          </SC.PasswordWrapper>
 
-        <Button>Submit</Button>
-      </SC.Form>
+          <Button>Submit</Button>
+        </SC.Form>
+      </Loader>
     </SC.FormWrapper>
   );
 }

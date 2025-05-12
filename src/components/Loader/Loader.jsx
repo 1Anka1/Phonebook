@@ -1,16 +1,14 @@
 import PacmanLoader from 'react-spinners/PacmanLoader';
-import * as SC from './Loader.styled';
-import { useSelector } from 'react-redux';
-import { selectIsLogged } from '../../redux/auth/authSelectors';
+import * as LSC from './Loader.styled';
+import { useAuth } from '../../hooks/useAuth';
 
 export default function Loader({ children }) {
-  const isLoading = useSelector(selectIsLogged);
-  console.log(isLoading);
+  const { loading, refresh } = useAuth();
 
-  return !isLoading ? (
-    <SC.LoaderWrapper>
+  return loading || refresh ? (
+    <LSC.LoaderWrapper>
       <PacmanLoader size={50} color={'var(--primary-color)'} />
-    </SC.LoaderWrapper>
+    </LSC.LoaderWrapper>
   ) : (
     children
   );

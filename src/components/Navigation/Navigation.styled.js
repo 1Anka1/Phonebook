@@ -41,5 +41,9 @@ export const NavLinkItems = styled(NavLink)`
 export const NavWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
+`;
+
+export const UserName = styled.p`
+  letter-spacing: 3px;
 `;
