@@ -12,7 +12,7 @@ export const Form = styled.form`
   width: 600px;
   padding: 50px;
   border-radius: 35px;
-  box-shadow: #d59bf6 0px 0px 0px 3px;
+  box-shadow: var(--primary-color) 0px 0px 0px 3px;
 `;
 
 export const FormTitle = styled.h2`

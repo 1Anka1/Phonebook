@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 :root {
-  --primary-color: #d59bf6;
+  --primary-color: #80b1ec;
+  --accent-yellow-color: #ffd063;
+  --accent-red-color: #ff0000;
+  --accept-color: #6feda0;
   --light-color: #ffff;
   --text-color: #666;
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -36,7 +39,8 @@ a {
 }
 
 ul,
-li {
+li,
+ol {
   padding: 0;
   margin: 0;
   list-style: none;
@@ -50,6 +54,5 @@ img {
 body {
   display: block;
   margin: 0;
-  font-size: 25px;
   font: 25px/1.5 'Indie Flower', cursive;
 }

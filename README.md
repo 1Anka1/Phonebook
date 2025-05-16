@@ -2,7 +2,7 @@
 
 Need to be done:
 
--styling page Phonebook + modal with input to add the contacts;
+-Modal ;
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
