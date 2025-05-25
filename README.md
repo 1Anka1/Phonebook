@@ -1,3 +1,21 @@
+📱 PhoneBook
+A simple PhoneBook app built with React. Users can register, log in, and manage their personal contacts.
+
+✨ Features:
+User authentication (register & login)
+
+Add, delete, and view contacts
+
+React + Redux for state management
+
+Redux Persist for saving data across sessions
+
+Form handling with React Hook Form, Yup, and @hookform/resolvers
+
+API requests using Axios
+
+Styled UI with Styled Components
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
