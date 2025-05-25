@@ -1,4 +1,4 @@
-import { Routes, Route, redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/shared/Layout/Layout';
 import { Home, Login, Register, Phonebook } from './pages';
 import PrivateRoute from './components/AuthRoutes/PrivateRoute';
@@ -7,7 +7,7 @@ import { refreshUser } from './redux/auth/authOperations';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAuth } from './hooks/useAuth';
-import Loader from './components/Loader/Loader';
+// import Loader from './components/Loader/Loader';
 
 function App() {
   const { refresh } = useAuth();

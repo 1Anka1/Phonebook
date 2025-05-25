@@ -14,6 +14,7 @@ export const ContactItem = styled.li`
   gap: 30px;
   padding: 20px;
   justify-content: space-around;
+  letter-spacing: 2px;
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--primary-color);

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { register, login, logout, refreshUser } from './authOperations';
+import { registration, login, logout, refreshUser } from './authOperations';
 
 const initialState = Object.freeze({
   user: {
@@ -17,21 +17,21 @@ export const authSlice = createSlice({
   initialState,
   extraReducers: (builder) =>
     builder
-      .addCase(register.pending, (state) => {
+      .addCase(registration.pending, (state) => {
         state.user = initialState.user;
         state.token = initialState.token;
         state.isLoggedIn = initialState.isLoggedIn;
         state.isRefreshing = initialState.isRefreshing;
         state.isLoading = true;
       })
-      .addCase(register.fulfilled, (state, { payload }) => {
+      .addCase(registration.fulfilled, (state, { payload }) => {
         state.user = payload.data.user;
         state.token = payload.data.token;
         state.isLoggedIn = true;
         state.isLoading = false;
         state.isRefreshing = false;
       })
-      .addCase(register.rejected, (state) => state)
+      .addCase(registration.rejected, (state) => state)
 
       .addCase(login.pending, (state) => {
         state.user = initialState.user;

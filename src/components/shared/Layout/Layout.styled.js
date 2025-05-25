@@ -8,5 +8,5 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
-  padding-top: 10px;
+  padding-top: 30px;
 `;

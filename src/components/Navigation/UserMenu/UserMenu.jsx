@@ -14,7 +14,7 @@ export default function UserMenu() {
 
   return (
     <SC.NavWrapper>
-      <img src="../../../../public/images/avatarPhoto.png" alt="Avatar" width="70" />
+      <img src="/images/avatarPhoto.png" alt="Avatar" width="70" />
       <SC.UserName>{name.toUpperCase()}!</SC.UserName>
       <SC.NavItems>
         <Button type="submit" onClick={() => handleLogOut()}>
