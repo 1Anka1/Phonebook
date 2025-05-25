@@ -1,4 +1,4 @@
-📱 # PhoneBook
+# PhoneBook
 A simple PhoneBook app built with React. Users can register, log in, and manage their personal contacts.
 
 ✨ Features:
